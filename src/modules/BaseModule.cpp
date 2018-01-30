@@ -18,6 +18,7 @@
 */
 
 #include <boost/archive/text_oarchive.hpp>
+#include <boost/archive/basic_archive.hpp>
 #include <boost/property_tree/ptree_serialization.hpp>
 #include <tools/log.hpp>
 #include <core/config/ConfigManager.hpp>

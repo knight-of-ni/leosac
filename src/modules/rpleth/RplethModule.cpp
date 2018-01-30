@@ -21,6 +21,7 @@
 #include "hardware/FWiegandReader.hpp"
 #include "RplethModule.hpp"
 #include "rplethprotocol.hpp"
+#include <boost/archive/basic_archive.hpp>
 #include <boost/property_tree/ptree_serialization.hpp>
 #include <boost/archive/binary_iarchive.hpp>
 #include <boost/archive/binary_oarchive.hpp>
