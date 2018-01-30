@@ -67,7 +67,6 @@ TMP_DIR=$(mktemp -d)
 cd $TMP_DIR
 echo $TMP_DIR
 
-
 clone $url $branch
 
 MAJOR=`grep "DLEOSAC_VERSION_MAJOR=" leosac/CMakeLists.txt | egrep -o '([0-9]+)'`
@@ -88,3 +87,13 @@ if [ -z ${DEB_BUILD_OPTIONS} ] ; then
     export DEB_BUILD_OPTIONS="parallel=3"
 fi
 debuild -us -uc
+
+RESULT="$?"
+
+if [ "$RESULT" == "0" ]; then
+    echo
+    echo "The build succeeded."
+    echo "Debian package files can be found here: ${TMP_DIR}"
+    echo
+fi
+
