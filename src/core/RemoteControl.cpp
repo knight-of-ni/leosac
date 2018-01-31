@@ -30,6 +30,7 @@
 #include <boost/regex.hpp>
 #include <boost/archive/text_iarchive.hpp>
 #include <boost/archive/binary_iarchive.hpp>
+#include <boost/archive/basic_archive.hpp>
 #include <boost/property_tree/ptree_serialization.hpp>
 #include <boost/archive/text_oarchive.hpp>
 #include "core/CoreUtils.hpp"

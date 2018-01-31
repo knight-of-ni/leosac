@@ -19,6 +19,7 @@
 
 #include "WebSockAPI.hpp"
 #include "WSServer.hpp"
+#include "modules/websock-api/api/APIAuth.hpp"
 
 using namespace Leosac;
 using namespace Leosac::Module;

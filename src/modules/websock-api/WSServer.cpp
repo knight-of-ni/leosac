@@ -40,7 +40,7 @@ WSServer::WSServer()
     srv_.set_reuse_addr(true);
 
     handlers_["get_leosac_version"] = &API::get_leosac_version;
-    handlers_["create_auth_token"] = &API::create_auth_token;
+    handlers_["create_auth_token"] = &API::get_auth_token;
     handlers_["authenticate_with_token"] = &API::authenticate_with_token;
     handlers_["logout"] = &API::logout;
 }

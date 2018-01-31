@@ -19,6 +19,7 @@
 
 #include <boost/archive/text_iarchive.hpp>
 #include <boost/archive/binary_iarchive.hpp>
+#include <boost/archive/basic_archive.hpp>
 #include <boost/property_tree/ptree_serialization.hpp>
 #include <tools/XmlPropertyTree.hpp>
 #include <tools/PropertyTreeExtractor.hpp>
