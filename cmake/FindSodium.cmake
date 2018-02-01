@@ -1,4 +1,5 @@
-odium
+
+# - Find Sodium
 # Find the native libsodium includes and library.
 # Once done this will define
 #
