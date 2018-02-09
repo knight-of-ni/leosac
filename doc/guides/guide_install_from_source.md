@@ -24,28 +24,24 @@ libboost-system-dev python3 python3-pip
 @note The ODB package from the Debian repository is broken. A bug report has been filed. See [889664](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=889664). Until this is resolved, a set of patched odb packages have been made available in the Leosac bin-resources repository
 
 The following steps assume there are not already any odb packages installed on the target system. If there are, uninstall them first.
-```
-git clone https://github.com/leosac/bin-resources
-cd bin-resources/debian/gcc6/amd64
-sudo dpkg -i *.deb
-sudo apt-get install -f
-```
+  + `git clone https://github.com/leosac/bin-resources`
+  + `cd bin-resources/debian/gcc6/amd64`
+  + `sudo dpkg -i *.deb`
+  + `sudo apt-get install -f`
+
 If running Raspbian, replace amd64 in the folder name shown above with armhf.
 
 Build
 -----
 
-Clone the repo: `git clone https://github.com/leosac/leosac.git`
-Now go to the `leosac` directory.
-
-```
-git submodule init && git submodule update
-mkdir build;
-cd build;
-cmake -DCMAKE_BUILD_TYPE=Release ..
-make
-sudo make install
-```
+Clone the repo: `git clone https://github.com/leosac/leosac.git` and perform the following:
+  + `cd leosac`
+  + `git submodule init && git submodule update`
+  + `mkdir build`
+  + `cd build`
+  + `cmake -DCMAKE_BUILD_TYPE=Release ..`
+  + `make`
+  + `sudo make install`
 
 Follow-Up Tasks
 ---------------
@@ -53,13 +49,10 @@ Follow-Up Tasks
 Leosac is now installed on your system, but there are couple of tasks you should perform.
 
 Copy the init script into place so that Leosac can be started as a service:
-```
-sed -i 's/\/usr\/bin\/leosac/\/usr\/local\/bin\/leosac/g' ../pkg/deb/leosacd
-sudo install -m 755 -t "/etc/init.d" "../pkg/deb/leosacd"
-```
-The steps above assume you are still in the build subfolder created earlier.
+  + `sudo install -m 755 -t "/etc/init.d" "../pkg/deb/leosacd"`
+
+@note The steps above assume you are still in the build subfolder created earlier.
 
 Create a kernel.xml file (see the [installation guide](@ref page_guide_rpi_piface_wiegand)) and copy it to /etc/leosac.d.
-```
-sudo install -m 755 -d "/etc/leosac.d"
-```
+  + `sudo install -m 755 -d "/etc/leosac.d"`
+

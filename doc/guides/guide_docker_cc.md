@@ -88,10 +88,11 @@ Follow-Up Tasks
 
 Leosac is now installed on your system, but there are couple of additonal tasks you should perform for the best experience.
 
-Copy the Leosac init script into place so it can be started as a service:
-  + `wget https://raw.githubusercontent.com/leosac/leosac/develop/pkg/deb/leosacd`
-  + `sed -i 's/\/usr\/bin\/leosac/\/usr\/local\/bin\/leosac/g' pkg/deb/leosacd`
-  + `sudo install -m 755 -t "/etc/init.d" "leosacd"`
+Generate a service file on the host machine then copy it to the target machine:
+  + `cd leosac`
+  + `mkdir build && cd build`
+  + `cmake -DCMAKE_BUILD_TYPE=Release ..`
+  + `
 
 Create a kernel.xml file (see the [installation guide](@ref page_guide_rpi_piface_wiegand)) and copy it to /etc/leosac.d.
   + `sudo install -m 755 -d "/etc/leosac.d"`
