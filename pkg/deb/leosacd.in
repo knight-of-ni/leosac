@@ -10,10 +10,10 @@
 # Description:          Leosac daemon
 ### END INIT INFO
 
-DAEMON=/usr/bin/leosac
-DAEMON_OPTS="-k /etc/leosac.d/kernel.xml"
-LEOSAC_PID_FILE=/var/run/leosac.pid
-LEOSAC_DIR="/etc/leosac.d"
+DAEMON=@CMAKE_INSTALL_FULL_BINDIR@/leosac
+DAEMON_OPTS="-k @CMAKE_INSTALL_FULL_SYSCONFDIR@/leosac.d/kernel.xml"
+LEOSAC_PID_FILE=@CMAKE_INSTALL_FULL_LOCALSTATEDIR@/run/leosac.pid
+LEOSAC_DIR="@CMAKE_INSTALL_FULL_SYSCONFDIR@/leosac.d"
 
 ## some env variable that you may customize
 LEOSAC_SCRIPTS_DIR="/usr/scripts/"

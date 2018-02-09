@@ -11,6 +11,7 @@ set(CPACK_PACKAGE_VERSION_MINOR "7")
 set(CPACK_PACKAGE_VERSION_PATCH "0")
 
 include(CPack)
+include (GNUInstallDirs)
 
 set(LEOSAC_CROSS_COMPILE 0)
 if (CMAKE_TOOLCHAIN_FILE)
@@ -70,6 +71,10 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${LEOSAC_BINARY_DIR})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${LEOSAC_BINARY_DIR})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${LEOSAC_BINARY_DIR})
 set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_RPATH}:\$ORIGIN/../lib")
+
+# Generate config files from the .in files
+configure_file(pkg/deb/leosacd.in "${CMAKE_CURRENT_BINARY_DIR}/pkg/deb/leosacd" @ONLY)
+configure_file(pkg/deb/leosacd.service.in "${CMAKE_CURRENT_BINARY_DIR}/pkg/deb/leosacd.service" @ONLY)
 
 add_subdirectory(deps/zmqpp)
 add_subdirectory(src)

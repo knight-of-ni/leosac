@@ -1,0 +1,14 @@
+[Unit]
+Description=Leosac daemon
+Documentation=http://www.github.com/islog/leosac/wiki
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=@CMAKE_INSTALL_FULL_BINDIR@/leosac -k @CMAKE_INSTALL_FULL_SYSCONFDIR@/leosac.d/kernel.xml
+WorkingDirectory=@CMAKE_INSTALL_FULL_SYSCONFDIR@/leosac.d
+PIDFile=@CMAKE_INSTALL_FULL_LOCALSTATEDIR@/run/leosac.pid
+
+[Install]
+WantedBy=default.target
+
