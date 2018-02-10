@@ -3,7 +3,7 @@
 _INSTALL_PATH = $$(pwd)/debian/leosac
 
 %:
-	dh $@ --parallel
+	dh ${@} --parallel --with=systemd
 
 override_dh_shlibdeps:
 	# Should disable error against libzmq not being installed
@@ -16,9 +16,6 @@ override_dh_auto_configure:
 
 override_dh_auto_install:
 	dh_auto_install
-	install -m 755 -d "$(_INSTALL_PATH)/lib/systemd/system"
-	install -m 755 -t "$(_INSTALL_PATH)/lib/systemd/system"                 \
-		"pkg/deb/leosacd.service"
 	install -m 755 -d "$(_INSTALL_PATH)/etc/leosac.d"
 	install -m 755 -d "$(_INSTALL_PATH)/etc/leosac.d/factory"
 

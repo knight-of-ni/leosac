@@ -3,7 +3,7 @@ Maintainer: Arnaud Kapp <kapp.arno@gmail.com>
 Section: misc
 Priority: optional
 Standards-Version: 3.9.2
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 9), dh-systemd,
                cmake,
                default-libmysqlclient-dev | libmysqlclient-dev,
                g++ (>= 5),
