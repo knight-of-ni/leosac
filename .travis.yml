@@ -2,9 +2,6 @@ language: cpp
 sudo: required
 dist: trusty
 cache: ccache
-compiler:
-- gcc
-sudo: required
 services:
 - docker
 addons:
@@ -20,5 +17,6 @@ env:
   - DOCKER_REPO=knnniggett/leosac:build-leosac-deb-amd64
   - DOCKER_REPO=knnniggett/leosac:build-leosac-deb-armhf
 script:
-  - docker run -e DEB_BUILD_OPTIONS="parallel=2" -v /mnt:/tmp $DOCKER_REPO
+  - mkdir -p /debian
+  - docker run -e DEB_BUILD_OPTIONS="parallel=2" -v /debian:/tmp $DOCKER_REPO
 
