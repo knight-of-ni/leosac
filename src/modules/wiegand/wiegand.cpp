@@ -183,7 +183,7 @@ WiegandReaderModule::create_strategy(const WiegandReaderConfig &reader_cfg,
     else if (reader_cfg.mode == "AUTODETECT")
     {
         return std::unique_ptr<WiegandStrategy>(
-            new Autodetect(reader, reader_cfg.pin_timeout, reader_cfg.pin_key_end));
+            new Autodetect(reader, reader_cfg.pin_timeout, reader_cfg.pin_key_end, reader_cfg.nowait));
     }
     else
     {

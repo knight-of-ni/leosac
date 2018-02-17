@@ -100,6 +100,7 @@ class Autodetect : public WiegandStrategy
     bool ready_;
 
     char pin_key_end_;
+    bool nowait_;
 };
 }
 }
