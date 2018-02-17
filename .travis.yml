@@ -2,8 +2,10 @@ language: cpp
 sudo: required
 dist: trusty
 cache: ccache
+git:
+  submodules: false
 services:
-- docker
+  - docker
 addons:
   apt:
     packages:
