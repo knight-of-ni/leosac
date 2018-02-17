@@ -1,0 +1,24 @@
+language: cpp
+sudo: required
+dist: trusty
+cache: ccache
+compiler:
+- gcc
+sudo: required
+services:
+- docker
+addons:
+  apt:
+    packages:
+    - binfmt-support
+    - qemu
+    - qemu-user-static
+install:
+  - update-binfmts --enable qemu-arm
+env:
+  matrix:
+  - DOCKER_REPO=knnniggett/leosac:build-leosac-deb-amd64
+  - DOCKER_REPO=knnniggett/leosac:build-leosac-deb-armhf
+script:
+  - docker run -e DEB_BUILD_OPTIONS="parallel=2" -v /mnt:/tmp $DOCKER_REPO
+
