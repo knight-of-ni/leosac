@@ -1,0 +1,18 @@
+<changelog xmlns="http://www.codesynthesis.com/xmlns/odb/changelog" database="pgsql" schema-name="module_auth-db" version="1">
+  <model version="1">
+    <table name="AuthDBInstance" kind="object">
+      <column name="id" type="BIGINT" null="false"/>
+      <column name="door" type="BIGINT" null="true"/>
+      <column name="odb_version" type="BIGINT" null="false"/>
+      <primary-key auto="true">
+        <column name="id"/>
+      </primary-key>
+      <foreign-key name="door_fk" deferrable="DEFERRED">
+        <column name="door"/>
+        <references table="Door">
+          <column name="id"/>
+        </references>
+      </foreign-key>
+    </table>
+  </model>
+</changelog>

@@ -1,0 +1,6 @@
+Click
+Pygments
+click-repl
+colorama
+docker
+websockets
