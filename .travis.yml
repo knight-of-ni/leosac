@@ -20,5 +20,5 @@ env:
   - DOCKER_REPO=knnniggett/leosac:build-leosac-deb-armhf
 script:
   - mkdir -p $HOME/debian
-  - docker run -e DEB_BUILD_OPTIONS="parallel=4" -v $HOME/debian:/tmp $DOCKER_REPO
+  - docker run -e DEBUILD_LINTIAN="no" -e DEB_BUILD_OPTIONS="parallel=4" -v $HOME/debian:/tmp $DOCKER_REPO
 
