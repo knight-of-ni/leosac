@@ -19,6 +19,7 @@
 
 #pragma once
 
+#include <functional>
 #include "LeosacFwd.hpp"
 #include "Task.hpp"
 
