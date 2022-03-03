@@ -19,6 +19,7 @@
 
 #pragma once
 
+#include <memory>
 #include "tools/Uuid.hpp"
 
 namespace Leosac
